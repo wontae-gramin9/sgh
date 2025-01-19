@@ -4,7 +4,7 @@ import type { CardType } from "@/app/types/Card";
 // To categorize route hanlers and its HTTP methods sorely on api/mock/routes file
 // Also, place mockData and UpdateServerStatusOfCard() in the same file enables mutating mockData easily
 // Because, at ES6, imported objects are immutable, so on tried mutating it exude a compile error
-export const mockData: CardType[] = [
+export let mockData: CardType[] = [
   {
     id: 1,
     name: "Survival Paradise",
@@ -61,3 +61,14 @@ export const mockData: CardType[] = [
     mods: ["Litematica", "Schematica"],
   },
 ];
+
+// [Wontae] A helper function simulate a database UPDATE operations
+export const UpdateServerStatusOfCard = (id: number) => {
+  mockData = mockData.map((card: CardType) => {
+    if (id === card.id) {
+      card.status = card.status === "online" ? "offline" : "online";
+    }
+    return card;
+  });
+  return mockData.find((card) => card.id === id);
+};
