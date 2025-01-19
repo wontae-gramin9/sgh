@@ -1,6 +1,7 @@
 "use client";
 
 import type { CardType } from "@/app/types/Card";
+import Button from "@/app/components/Button";
 import { useState } from "react";
 
 function Card(props: { card: CardType }) {
@@ -42,9 +43,9 @@ function Card(props: { card: CardType }) {
       <p>Game Name: {game}</p>
       <p>Player Count: {players}</p>
       <p>Server Status Indicator: {serverStatus}</p>
-      <button disabled={loading}>
+      <Button disabled={loading}>
         {serverStatus === "online" ? "Stop" : "Start"} Server
-      </button>
+      </Button>
     </form>
   );
 }
