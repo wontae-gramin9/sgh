@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { CardType } from "./types/Card";
+import Card from "./components/Card";
 
 /*
   Welcome to the simplegamehosting coding assignment!
@@ -18,7 +20,7 @@ import { useEffect, useState } from "react";
 */
 
 export default function Home() {
-  const [serverData, setServerData] = useState(null);
+  const [serverData, setServerData] = useState<CardType[] | null>(null);
   // you can update this fetching code if required but it's not necessary for the assignment.
   useEffect(() => {
     const fetchServerData = async () => {
@@ -44,7 +46,11 @@ export default function Home() {
           build the UI.
         </p>
         <pre className="bg-gray-200 text-gray-800 p-4 rounded-lg w-full overflow-auto max-w-4xl text-sm">
-          {serverData ? JSON.stringify(serverData, null, 2) : "Loading data..."}
+          {serverData
+            ? serverData.map((card: CardType) => (
+                <Card key={card.id} card={card} />
+              ))
+            : "Loading data..."}
         </pre>
       </main>
       {/* main can be deleted and replaced with your own cards */}
