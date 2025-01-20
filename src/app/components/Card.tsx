@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function Card(props: { card: CardType }) {
   const { card } = props;
-  const { id, game, players, status, region } = card;
+  const { id, name, game, players, status } = card;
   const [serverStatus, setServerStatus] = useState(() => status);
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +39,7 @@ function Card(props: { card: CardType }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Server Name: {region}</p>
+      <p>Server Name: {name}</p>
       <p>Game Name: {game}</p>
       <p>Player Count: {players}</p>
       <p>Server Status Indicator: {serverStatus}</p>
