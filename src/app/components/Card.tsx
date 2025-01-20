@@ -38,12 +38,12 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="rounded-lg border border-purple bg-lavender p-6 shadow-lg">
+    <div className="rounded-lg border border-purple-3 bg-purple-3 p-6 shadow-lg">
       <form onSubmit={handleSubmit}>
-        <p className="text-purple">Server Name: {name}</p>
-        <p className="text-orange">Game Name: {game}</p>
-        <p className="text-gold">Player Count: {players}</p>
-        <p className="text-darkgray">Server Status Indicator: {serverStatus}</p>
+        <p className="text-purple-2">Server Name: {name}</p>
+        <p className="text-orange-2">Game Name: {game}</p>
+        <p className="text-yellow-2">Player Count: {players}</p>
+        <p className="text-black-2">Server Status Indicator: {serverStatus}</p>
         <Button disabled={loading}>
           {serverStatus === "online" ? "Stop" : "Start"} Server
         </Button>
