@@ -1,19 +1,17 @@
 import React, { ButtonHTMLAttributes } from "react";
 
-// intrinsicAttribute를 사용해서 prop으로 명시하지 않아도
-// 상속해서 받을 수 있게 하는 것
+// [Wontae] to automatically inherit all standard HTML attributes for a `<button>` element,
+// such as `disabled`, `type`, `onClick`, etc
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  onClick?: () => void;
   children: React.ReactNode;
 };
 
-export default function Button({ onClick, children, ...props }: ButtonProps) {
+export default function Button({ children, ...props }: ButtonProps) {
   return (
     <button
       type="submit"
-      onClick={onClick}
       {...props}
-      className={`inline-block rounded-lg border bg-white-100 px-5 py-2.5 text-sm font-medium hover:text-white-100`}
+      className={`inline-block rounded-lg border bg-lavender px-5 py-2.5 text-sm text-violet hover:bg-purple hover:text-white`}
     >
       {children}
     </button>
