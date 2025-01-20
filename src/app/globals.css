@@ -7,10 +7,26 @@
   --foreground: #171717;
 }
 
+/* 
+[Wontae] Asked ChatGPT to make a pallete,
+based on SimpleGameHosting's primary color #5F4BB6
+And this project's default black(#0a0a0a) and white(#ededed)
+*/
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --dark-primary: #48398a; /* Hover Dark Purple */
+    --primary: #5f4bb6; /* SimpleGameHosting Purple */
+    --soft-primary: #7f6dcc; /* A lighter tone of #5F4BB6, ideal for gradients and secondary highlights. */
+    --pale-primary: #b8b8d8; /*  Pale Lavender */
+    --secondary: #ff6f61; /* Warm Orange, complementary color to primary */
+    --tertiary: #ffd700; /*  Bright Gold, offers a luxurious and elegant touch. */
+
+    --text-primary: #333333; /* Complements the foreground (#EDEDED) */
+    --text-secondary: #bfbfbf; /* Bright Gray */
   }
 }
 
