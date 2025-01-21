@@ -5,14 +5,10 @@ export function useLocalStorageState(
   key: string
 ): [boolean, Dispatch<SetStateAction<boolean>>] {
   // [Wontae] lazy state initialization
-  const [value, setValue] = useState<boolean>(initialState);
-
-  useEffect(() => {
+  const [value, setValue] = useState(function () {
     const storedValue = localStorage.getItem(key);
-    if (storedValue) {
-      setValue(JSON.parse(storedValue));
-    }
-  }, [key, setValue]);
+    return storedValue ? JSON.parse(storedValue) : initialState;
+  });
 
   useEffect(
     function () {
