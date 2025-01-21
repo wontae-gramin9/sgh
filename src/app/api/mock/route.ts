@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   if (!id) throw new Error("Something wrong with the card id");
 
   try {
-    const updatedCard = UpdateServerStatusOfCard(parseInt(id));
+    const updatedCard = await UpdateServerStatusOfCard(parseInt(id));
     return Response.json({
       result: "SUCCESS",
       data: updatedCard,

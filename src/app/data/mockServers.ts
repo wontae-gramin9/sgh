@@ -63,12 +63,21 @@ export let mockData: CardType[] = [
 ];
 
 // [Wontae] A helper function simulate a database UPDATE operations
+// Giving a bit of stop to emulate the DB operations with Promise
 export const UpdateServerStatusOfCard = (id: number) => {
-  mockData = mockData.map((card: CardType) => {
-    if (id === card.id) {
-      card.status = card.status === "online" ? "offline" : "online";
-    }
-    return card;
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      try {
+        mockData = mockData.map((card: CardType) => {
+          if (id === card.id) {
+            card.status = card.status === "online" ? "offline" : "online";
+          }
+          return card;
+        });
+        res(mockData.find((card) => card.id === id));
+      } catch (err) {
+        rej(err);
+      }
+    }, 1000);
   });
-  return mockData.find((card) => card.id === id);
 };
