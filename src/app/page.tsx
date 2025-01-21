@@ -37,15 +37,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
       {/* main can be deleted and replaced with your own cards */}
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <h1 className="text-2xl font-bold">Minecraft Server List</h1>
         <p className="text-gray-600">
           Below is the JSON data fetched from <code>/api/mock</code>. Use it to
           build the UI.
         </p>
-        <pre className="bg-gray-200 text-gray-800 p-4 rounded-lg w-full overflow-auto max-w-4xl text-sm">
+        <pre className="w-full max-w-4xl overflow-auto rounded-lg bg-gray-200 p-4 text-sm text-gray-800">
           {serverData
             ? serverData.map((card: CardType) => (
                 <Card key={card.id} card={card} />
