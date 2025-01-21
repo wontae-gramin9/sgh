@@ -12,15 +12,18 @@ const DarkModeContext = createContext<DarkModeContextType | null>(null);
 
 function DarkModeProvider({ children }: { children: React.ReactNode }) {
   // [Wontae] ReferenceError: window is not defined
-
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
+    false, // Gets reset by useEffect immediately
     "isDarkMode"
   );
 
-  function toggleDarkMode() {
-    setIsDarkMode((isDark: boolean) => !isDark);
-  }
+  useEffect(() => {
+    // access window only on browser(client side)
+    const userBrowserDarkModeSetting = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setIsDarkMode(userBrowserDarkModeSetting);
+  }, [setIsDarkMode]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -32,6 +35,9 @@ function DarkModeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [isDarkMode]);
 
+  function toggleDarkMode() {
+    setIsDarkMode((isDark: boolean) => !isDark);
+  }
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
       {children}
