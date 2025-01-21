@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      scale: {
+        "1": "1.01",
+        "2": "1.03",
+        "3": "1.05",
+      },
       colors: {
         black: {
           3: "var(--black-dark)",
