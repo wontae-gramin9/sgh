@@ -47,7 +47,7 @@ export default function Home() {
           Below is the JSON data fetched from <code>/api/mock</code>. Use it to
           build the UI.
         </p>
-        <pre className="w-full max-w-4xl overflow-auto rounded-lg bg-gray-200 p-4 text-sm text-gray-800">
+        <pre className="w-full max-w-4xl overflow-auto rounded-lg p-4 text-sm">
           {serverData
             ? serverData.map((card: CardType) => (
                 <Card key={card.id} card={card} />

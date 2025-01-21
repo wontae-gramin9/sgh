@@ -14,69 +14,50 @@
     NOW defines to set of temporary color plates according to light-mode/dark-mode classname. 
     Because,  DarkModeContext&useLocalStorageState detects @media (prefers-color-scheme: dark) and set the initial value
   */
+
+  --primary-strong: #48398a;
+  --primary-normal: #5f4bb6;
+  --primary-light: #7f6dcc;
+
+  --error-strong: #7a2833;
+  --error-normal: #b03a48;
+  --error-light: #d97080;
+
+  --success-strong: #2a6c4d;
+  --success-normal: #3b8a5c;
+  --success-light: #9bd4b5;
+
   &.light-mode {
-    --white-dark: #171717;
-    --white-normal: #333333;
-    --white-light: #4d4d4d;
+    --background-strong: #ffffff;
+    --background-normal: #f5f5f5;
+    --background-light: #e6e6e6;
 
-    --black-dark: #e6e6e6;
-    --black-normal: #f5f5f5;
-    --black-light: #ffffff;
+    --foreground-strong: #171717;
+    --foreground-normal: #494454;
+    --foreground-light: #333333;
 
-    --purple-dark: #7a2833;
-    --purple-normal: #b03a48;
-    --purple-light: #d97080;
-
-    --orange-dark: #cc4f4a;
-    --orange-normal: #ff6f61;
-    --orange-light: #ff9f90;
-
-    --yellow-dark: #b89b00;
-    --yellow-normal: #ffd700;
-    --yellow-light: #ffe866;
-
-    --red-dark: #7a2833;
-    --red-normal: #b03a48;
-    --red-light: #d97080;
-
-    --green-dark: #2a6c4d;
-    --green-normal: #3b8a5c;
-    --green-light: #9bd4b5;
+    --secondary-strong: #b89b00;
+    --secondary-normal: #ffd700;
+    --secondary-light: #ffe866;
   }
 
   &.dark-mode {
-    --black-dark: #171717;
-    --black-normal: #333333;
-    --black-light: #4d4d4d;
+    --background-strong: #171717;
+    --background-normal: #494454;
+    --background-light: #333333;
 
-    --white-dark: #e6e6e6;
-    --white-normal: #f5f5f5;
-    --white-light: #ffffff;
+    --foreground-strong: #e6e6e6;
+    --foreground-normal: #f5f5f5;
+    --foreground-light: #ffffff;
 
-    --purple-dark: #48398a;
-    --purple-normal: #5f4bb6;
-    --purple-light: #7f6dcc;
-
-    --orange-dark: #cc4f4a;
-    --orange-normal: #ff6f61;
-    --orange-light: #ff9f90;
-
-    --yellow-dark: #b89b00;
-    --yellow-normal: #ffd700;
-    --yellow-light: #ffe866;
-
-    --red-dark: #7a2833;
-    --red-normal: #b03a48;
-    --red-light: #d97080;
-
-    --green-dark: #2a6c4d;
-    --green-normal: #3b8a5c;
-    --green-light: #9bd4b5;
+    --secondary-strong: #cc4f4a;
+    --secondary-normal: #ff6f61;
+    --secondary-light: #ff9f90;
   }
 }
 
 body {
-  color: var(--black-dark);
-  background: var(--white-light);
+  color: var(--foreground-strong);
+  background: var(--background-strong);
   font-family: Arial, Helvetica, sans-serif;
 }

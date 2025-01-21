@@ -5,16 +5,14 @@ export default function DarkModeToggle() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   return (
     <button
-      className={`rounded border-black-2 ${
-        isDarkMode ? "bg-red-1 " : "bg-yellow-1 "
-      } p-2 transition-colors duration-200
+      className={`rounded border-background-nm bg-secondary-li p-2 transition-colors duration-200
       `}
       onClick={toggleDarkMode}
     >
       {isDarkMode ? (
-        <HiOutlineSun className="text-red-3" />
+        <HiOutlineSun className="text-secondary-st" />
       ) : (
-        <HiOutlineMoon className="text-yellow-3" />
+        <HiOutlineMoon className="text-secondary-st" />
       )}
     </button>
   );
