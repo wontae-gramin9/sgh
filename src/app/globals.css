@@ -3,20 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --white-light: #ffffff;
-  --black-dark: #171717;
-}
+  /* 
+    [Wontae] Asked ChatGPT to make a pallete,
+    based on SimpleGameHosting's primary color #5F4BB6
+    And this project's default black(#0a0a0a) and white(#ededed)
+  */
+  /* 
+    [Wontae] removed @media (prefers-color-scheme: dark) braket 
+    which only meant to react to the initial user browser dark mode setting.
+    NOW defines to set of temporary color plates according to light-mode/dark-mode classname. 
+    Because,  DarkModeContext&useLocalStorageState detects @media (prefers-color-scheme: dark) and set the initial value
+  */
+  &.light-mode {
+    --white-dark: #171717;
+    --white-normal: #333333;
+    --white-light: #4d4d4d;
 
-/* 
-[Wontae] Asked ChatGPT to make a pallete,
-based on SimpleGameHosting's primary color #5F4BB6
-And this project's default black(#0a0a0a) and white(#ededed)
-*/
+    --black-dark: #e6e6e6;
+    --black-normal: #f5f5f5;
+    --black-light: #ffffff;
 
-/* 100부터 900을 왜 안쓰는가에 대하여!
-나중에 다크모드하려고 이러는 거다. */
-@media (prefers-color-scheme: dark) {
-  :root {
+    --purple-dark: #7a2833;
+    --purple-normal: #b03a48;
+    --purple-light: #d97080;
+
+    --orange-dark: #cc4f4a;
+    --orange-normal: #ff6f61;
+    --orange-light: #ff9f90;
+
+    --yellow-dark: #b89b00;
+    --yellow-normal: #ffd700;
+    --yellow-light: #ffe866;
+
+    --red-dark: #7a2833;
+    --red-normal: #b03a48;
+    --red-light: #d97080;
+
+    --green-dark: #2a6c4d;
+    --green-normal: #3b8a5c;
+    --green-light: #9bd4b5;
+  }
+
+  &.dark-mode {
     --black-dark: #171717;
     --black-normal: #333333;
     --black-light: #4d4d4d;
