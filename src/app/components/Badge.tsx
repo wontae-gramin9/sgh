@@ -12,7 +12,7 @@ export default function Badge({ type, children }: BadgeProps) {
 
   return (
     <span
-      className={`${badgeBgColor} border ${badgeBorderColor} inline-flex items-center gap-1 rounded bg-green-2 p-1 py-0.5 text-xs text-white-1`}
+      className={`${badgeBgColor} min-w-[75px] border ${badgeBorderColor} inline-flex items-center justify-center gap-1 rounded bg-green-2 p-1 py-0.5 text-xs text-white-1`}
     >
       {type === "success" ? <FaCheckCircle /> : <FaRegTimesCircle />}
       {children}
