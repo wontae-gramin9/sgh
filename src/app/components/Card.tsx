@@ -3,6 +3,7 @@
 import type { CardType } from "@/app/types/Card";
 import Button from "@/app/components/Button";
 import Badge from "@/app/components/Badge";
+import Spinner from "@/app/components/Spinner";
 import { useState } from "react";
 
 function Card(props: { card: CardType }) {
@@ -25,7 +26,6 @@ function Card(props: { card: CardType }) {
         body: JSON.stringify(payload),
       });
       const result = await response.json();
-      console.log(result);
       const newServerStatus = result.data.status;
       setServerStatus(newServerStatus);
     } catch (error) {
@@ -41,23 +41,32 @@ function Card(props: { card: CardType }) {
   return (
     <div className="rounded-lg border border-purple-3 bg-white-1 p-6 shadow-lg transition duration-500 hover:scale-1">
       <form onSubmit={handleSubmit}>
-        <div className="text-center">
-          <h2 className="text-xl font-semibold text-purple-2">{name}</h2>
-          <p>{game}</p>
-        </div>
-        <div className="mt-2 flex items-center justify-between">
-          <p>{players} players online</p>
-          <Badge type={serverStatus === "online" ? "success" : "error"}>
-            {serverStatus === "online" ? "Online" : "Offline"}
-          </Badge>
-        </div>
-        <div className="mt-4 flex items-center justify-center">
-          <Button
-            className={`rounded-lg px-4 py-2 font-medium text-white-1`}
-            disabled={loading}
-          >
-            {serverStatus === "online" ? "Stop" : "Start"} Server
-          </Button>
+        <div className="flex flex-col items-center gap-2">
+          <h1 className="text-xl font-semibold text-purple-2">{name}</h1>
+          <h2 className="text-xl">{game}</h2>
+          <div>
+            <p>{players} Players playing</p>
+            <div className="flex items-center justify-center gap-2">
+              <span>Server Status</span>
+              <Badge type={serverStatus === "online" ? "success" : "error"}>
+                {serverStatus === "online" ? "Online" : "Offline"}
+              </Badge>
+            </div>
+          </div>
+          <div className="mt-2 flex items-center justify-center">
+            <Button
+              className={`rounded-lg px-4 py-2 font-medium text-white-1`}
+              disabled={loading}
+            >
+              {loading ? (
+                <Spinner />
+              ) : serverStatus === "online" ? (
+                "Stop Server"
+              ) : (
+                "Start Server"
+              )}
+            </Button>
+          </div>
         </div>
       </form>
     </div>
