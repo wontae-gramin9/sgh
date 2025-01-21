@@ -2,6 +2,7 @@
 
 import type { CardType } from "@/app/types/Card";
 import Button from "@/app/components/Button";
+import Badge from "@/app/components/Badge";
 import { useState } from "react";
 
 function Card(props: { card: CardType }) {
@@ -38,12 +39,14 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="rounded-lg border border-purple-3 bg-purple-3 p-6 shadow-lg">
+    <div className="rounded-lg border border-purple-3 bg-white-1 p-6 shadow-lg">
       <form onSubmit={handleSubmit}>
         <p className="text-purple-2">Server Name: {name}</p>
         <p className="text-orange-2">Game Name: {game}</p>
         <p className="text-yellow-2">Player Count: {players}</p>
-        <p className="text-black-2">Server Status Indicator: {serverStatus}</p>
+        <Badge type={serverStatus === "online" ? "success" : "error"}>
+          {serverStatus === "online" ? "Online" : "Offline"}
+        </Badge>
         <Button disabled={loading}>
           {serverStatus === "online" ? "Stop" : "Start"} Server
         </Button>
