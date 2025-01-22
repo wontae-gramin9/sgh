@@ -44,7 +44,7 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="rounded-lg border border-primary-st bg-background-nm p-6 shadow-lg transition duration-500 hover:scale-1">
+    <div className="min-w-72 rounded-lg border border-primary-st bg-background-li p-6 shadow-lg transition duration-500 hover:scale-1">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-xl font-semibold text-primary-st">{name}</h1>

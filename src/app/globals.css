@@ -28,9 +28,9 @@
   --success-light: #9bd4b5;
 
   &.light-mode {
-    --background-strong: #ffffff;
+    --background-strong: #e6e6e6;
     --background-normal: #f5f5f5;
-    --background-light: #e6e6e6;
+    --background-light: #ffffff;
 
     --foreground-strong: #171717;
     --foreground-normal: #333333;
@@ -57,7 +57,7 @@
 }
 
 body {
-  color: var(--foreground-strong);
-  background: var(--background-strong);
+  color: var(--foreground-light);
+  background: var(--background-light);
   font-family: Arial, Helvetica, sans-serif;
 }
