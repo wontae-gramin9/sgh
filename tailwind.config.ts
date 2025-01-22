@@ -14,6 +14,11 @@ export default {
         "3": "1.05",
       },
       colors: {
+        white: {
+          st: "var(--white-strong)",
+          nm: "var(--white-normal)",
+          li: "var(--white-light)",
+        },
         background: {
           st: "var(--background-strong)",
           nm: "var(--background-normal)",
