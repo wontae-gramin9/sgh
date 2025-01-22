@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { CardType } from "@/app/types/Card";
 import Card from "@/app/components/Card";
+import Spinner from "@/app/components/Spinner";
 // import DarkModeToggle from "@/app/components/DarkModeToggle";
 import Header from "@/app/components/templates/Header";
 import ResponsiveGrid from "@/app/components/templates/ResponsiveGrid";
@@ -43,13 +44,21 @@ export default function Home() {
     <div className="mx-auto flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
       <Header />
       <main className="flex w-full max-w-5xl flex-col px-2 sm:px-8">
-        <ResponsiveGrid>
-          {serverData
-            ? serverData.map((card: CardType) => (
-                <Card key={card.id} card={card} />
-              ))
-            : "Loading data..."}
-        </ResponsiveGrid>
+        {serverData ? (
+          <ResponsiveGrid>
+            {serverData.map((card: CardType) => (
+              <Card key={card.id} card={card} />
+            ))}
+          </ResponsiveGrid>
+        ) : (
+          <div className="flex h-96 items-center justify-center">
+            <Spinner
+              size="big"
+              fillColor="fill-primary-st"
+              ringColor="bg-backround-st"
+            />
+          </div>
+        )}
       </main>
     </div>
   );

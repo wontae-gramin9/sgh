@@ -1,18 +1,20 @@
 type SpnnierProps = {
+  fillColor?: string;
   ringColor?: string;
+  size?: "big" | "small";
 };
 
 const Spinner = ({
-  ringColor: spinnerColor = "text-background-nm",
+  fillColor = "fill-foreground-li",
+  ringColor = "text-background-nm",
+  size = "small",
 }: SpnnierProps) => {
   return (
     <svg
-      style={{
-        maxWidth: "1rem",
-        maxHeight: "1rem",
-      }}
       aria-hidden="true"
-      className={`inline size-4 animate-spin fill-background-st ${spinnerColor} ${`dark:${spinnerColor}`}`}
+      className={`inline ${
+        size === "small" ? "size-4" : "size-16"
+      } animate-spin ${fillColor} ${ringColor}`}
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
