@@ -5,7 +5,7 @@ import type { CardType } from "@/app/types/Card";
 // Also, place mockData and UpdateServerStatusOfCard() in the same file enables mutating mockData easily
 // Because, at ES6, imported objects are immutable, so on tried mutating it exude a compile error
 // export let mockData: CardType[] = [
-export const mockData: CardType[] = [
+export let mockData: CardType[] = [
   {
     id: 1,
     name: "Survival Paradise",
@@ -66,20 +66,27 @@ export const mockData: CardType[] = [
 // [Wontae] A helper function simulate a database UPDATE operations
 // Giving a bit of stop to emulate the DB operations with Promise
 export const UpdateServerStatusOfCard = (id: number) => {
-  console.log(id);
   return new Promise((res, rej) => {
+    // [Wontae] Add randomness to success/error responses to display success/error toast message
+    // Of course, with a real DB opertation, would be try/catch
     setTimeout(() => {
-      // try {
-      //   mockData = mockData.map((card: CardType) => {
-      //     if (id === card.id) {
-      //       card.status = card.status === "online" ? "offline" : "online";
-      //     }
-      //     return card;
-      //   });
-      //   res(mockData.find((card) => card.id === id));
-      // } catch (err) {
-      rej("err");
-      // }
+      if (Math.random() < 0.5) {
+        try {
+          mockData = mockData.map((card: CardType) => {
+            if (id === card.id) {
+              card.status = card.status === "online" ? "offline" : "online";
+            }
+            return card;
+          });
+          res(mockData.find((card) => card.id === id));
+        } catch (err) {
+          rej(err);
+        }
+      } else {
+        rej(new Error("Randomly display error toast."));
+      }
     }, 1000);
   });
 };
+
+// 뱃지색깔이 안바뀐다!!!
