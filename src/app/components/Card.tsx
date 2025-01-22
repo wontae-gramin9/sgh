@@ -26,11 +26,13 @@ function Card(props: { card: CardType }) {
         body: JSON.stringify(payload),
       });
       const result = await response.json();
+      console.log(result);
       const newServerStatus = result.data.status;
       setServerStatus(newServerStatus);
     } catch (error) {
       console.error(
-        `Failed to change server status of card with id ${id}:`,
+        "Card component handleSubmit Error \n",
+        `Failed to change server status of Card with id ${id} → \n`,
         error
       );
     } finally {
