@@ -2,7 +2,10 @@
 import { useEffect, useState } from "react";
 import { CardType } from "@/app/types/Card";
 import Card from "@/app/components/Card";
-import DarkModeToggle from "@/app/components/DarkModeToggle";
+import Spinner from "@/app/components/Spinner";
+// import DarkModeToggle from "@/app/components/DarkModeToggle";
+import Header from "@/app/components/templates/Header";
+import ResponsiveGrid from "@/app/components/templates/ResponsiveGrid";
 
 /*
   Welcome to the simplegamehosting coding assignment!
@@ -38,24 +41,25 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      {/* main can be deleted and replaced with your own cards */}
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <DarkModeToggle />
-        <h1 className="text-2xl font-bold">Minecraft Server List</h1>
-        <p className="text-gray-600">
-          Below is the JSON data fetched from <code>/api/mock</code>. Use it to
-          build the UI.
-        </p>
-        <pre className="w-full max-w-4xl overflow-auto rounded-lg p-4 text-sm">
-          {serverData
-            ? serverData.map((card: CardType) => (
-                <Card key={card.id} card={card} />
-              ))
-            : "Loading data..."}
-        </pre>
+    <div className="mx-auto flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
+      <Header />
+      <main className="flex w-full max-w-5xl flex-col px-2 sm:px-8">
+        {serverData ? (
+          <ResponsiveGrid>
+            {serverData.map((card: CardType) => (
+              <Card key={card.id} card={card} />
+            ))}
+          </ResponsiveGrid>
+        ) : (
+          <div className="flex h-96 items-center justify-center">
+            <Spinner
+              size="big"
+              fillColor="fill-primary-st"
+              ringColor="bg-backround-st"
+            />
+          </div>
+        )}
       </main>
-      {/* main can be deleted and replaced with your own cards */}
     </div>
   );
 }

@@ -27,40 +27,32 @@
   --success-normal: #3b8a5c;
   --success-light: #9bd4b5;
 
-  /* [Wontae] Toastify progress bar color overwriting */
-
-  --toastify-color-success: var(--success-strong);
-  --toastify-color-error: var(--error-strong);
-
-  -toastify-color-progress-success: var(--toastify-color-success);
-  -toastify-color-progress-error: var(--toastify-color-error);
-
   &.light-mode {
     --background-strong: #ffffff;
-    --background-normal: #f5f5f5;
-    --background-light: #e6e6e6;
+    --background-normal: #f9f8f9;
+    --background-light: #ebe6ec;
 
-    --foreground-strong: #171717;
-    --foreground-normal: #494454;
-    --foreground-light: #333333;
-
-    --secondary-strong: #b89b00;
-    --secondary-normal: #ffd700;
-    --secondary-light: #ffe866;
-  }
-
-  &.dark-mode {
-    --background-strong: #171717;
-    --background-normal: #494454;
-    --background-light: #333333;
-
-    --foreground-strong: #e6e6e6;
-    --foreground-normal: #f5f5f5;
-    --foreground-light: #ffffff;
+    --foreground-strong: #000000;
+    --foreground-normal: #171616;
+    --foreground-light: #232325;
 
     --secondary-strong: #cc4f4a;
     --secondary-normal: #ff6f61;
     --secondary-light: #ff9f90;
+  }
+
+  &.dark-mode {
+    --background-strong: #000000;
+    --background-normal: #171616;
+    --background-light: #232325;
+
+    --foreground-strong: #ffffff;
+    --foreground-normal: #f9f8f9;
+    --foreground-light: #ebe6ec;
+
+    --secondary-strong: #b89b00;
+    --secondary-normal: #ffd700;
+    --secondary-light: #ffe866;
   }
 }
 

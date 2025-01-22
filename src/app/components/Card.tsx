@@ -44,10 +44,10 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="rounded-lg border border-primary-st bg-background-nm p-6 shadow-lg transition duration-500 hover:scale-1">
+    <div className="min-w-56 rounded-lg border border-secondary-st bg-background-li px-1 py-4 shadow-lg transition duration-500 hover:scale-1 sm:min-w-64 sm:px-4">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center gap-2">
-          <h1 className="text-xl font-semibold text-primary-st">{name}</h1>
+          <h1 className="text-xl font-semibold text-secondary-st">{name}</h1>
           <h2 className="text-xl">{game}</h2>
           <div>
             <p>{players} Players playing</p>
