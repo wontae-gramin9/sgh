@@ -85,8 +85,6 @@ export const UpdateServerStatusOfCard = (id: number) => {
       } else {
         rej(new Error("Randomly display error toast."));
       }
-    }, 1000);
+    }, 500);
   });
 };
-
-// 뱃지색깔이 안바뀐다!!!

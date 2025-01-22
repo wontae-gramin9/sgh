@@ -6,13 +6,13 @@ type BadgeProps = {
 };
 
 export default function Badge({ type, children }: BadgeProps) {
-  const badgeBgColor = type === "success" ? "bg-success-li" : "bg-error-li";
+  const badgeBgColor = type === "success" ? "bg-success-nm" : "bg-error-li";
   const badgeBorderColor =
     type === "success" ? "border-success-st" : "border-error-st";
 
   return (
     <span
-      className={`${badgeBgColor} min-w-[75px] border ${badgeBorderColor} inline-flex items-center justify-center gap-1 rounded p-1 py-0.5 text-xs text-background-li`}
+      className={`${badgeBgColor} min-w-[75px] border ${badgeBorderColor} inline-flex items-center justify-center gap-1 rounded p-1 py-0.5 text-xs text-background-st`}
     >
       {type === "success" ? <FaCheckCircle /> : <FaRegTimesCircle />}
       {children}
