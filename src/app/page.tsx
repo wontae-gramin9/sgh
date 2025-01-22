@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="mx-auto flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
       <Header />
-      <main className="flex w-full max-w-5xl flex-col px-8">
+      <main className="flex w-full max-w-5xl flex-col px-2 sm:px-8">
         <ResponsiveGrid>
           {serverData
             ? serverData.map((card: CardType) => (
