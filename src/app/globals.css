@@ -27,22 +27,14 @@
   --success-normal: #3b8a5c;
   --success-light: #9bd4b5;
 
-  /* [Wontae] Toastify progress bar color overwriting */
-
-  --toastify-color-success: var(--success-strong);
-  --toastify-color-error: var(--error-strong);
-
-  -toastify-color-progress-success: var(--toastify-color-success);
-  -toastify-color-progress-error: var(--toastify-color-error);
-
   &.light-mode {
     --background-strong: #ffffff;
     --background-normal: #f5f5f5;
     --background-light: #e6e6e6;
 
     --foreground-strong: #171717;
-    --foreground-normal: #494454;
-    --foreground-light: #333333;
+    --foreground-normal: #333333;
+    --foreground-light: #494454;
 
     --secondary-strong: #b89b00;
     --secondary-normal: #ffd700;
@@ -51,8 +43,8 @@
 
   &.dark-mode {
     --background-strong: #171717;
-    --background-normal: #494454;
-    --background-light: #333333;
+    --background-normal: #333333;
+    --background-light: #494454;
 
     --foreground-strong: #e6e6e6;
     --foreground-normal: #f5f5f5;
