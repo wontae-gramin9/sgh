@@ -11,7 +11,7 @@ export default function Button({ children, ...props }: ButtonProps) {
     <button
       type="submit"
       {...props}
-      className={`inline-block min-w-[135px] rounded-lg border border-purple-3 bg-purple-2 px-5 py-2.5 text-sm text-white-1 transition-colors duration-500 hover:bg-purple-3`}
+      className={`inline-block min-w-[135px] rounded-lg border border-primary-st bg-primary-nm px-5 py-2.5 text-sm text-foreground-st transition-colors duration-500 hover:bg-primary-st`}
     >
       {children}
     </button>

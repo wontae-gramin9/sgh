@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { CardType } from "./types/Card";
-import Card from "./components/Card";
+import { CardType } from "@/app/types/Card";
+import Card from "@/app/components/Card";
+import DarkModeToggle from "@/app/components/DarkModeToggle";
 
 /*
   Welcome to the simplegamehosting coding assignment!
@@ -40,12 +41,13 @@ export default function Home() {
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
       {/* main can be deleted and replaced with your own cards */}
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+        <DarkModeToggle />
         <h1 className="text-2xl font-bold">Minecraft Server List</h1>
         <p className="text-gray-600">
           Below is the JSON data fetched from <code>/api/mock</code>. Use it to
           build the UI.
         </p>
-        <pre className="w-full max-w-4xl overflow-auto rounded-lg bg-gray-200 p-4 text-sm text-gray-800">
+        <pre className="w-full max-w-4xl overflow-auto rounded-lg p-4 text-sm">
           {serverData
             ? serverData.map((card: CardType) => (
                 <Card key={card.id} card={card} />

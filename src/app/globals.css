@@ -3,52 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --white-light: #ffffff;
-  --black-dark: #171717;
-}
+  /* 
+    [Wontae] Asked ChatGPT to make a pallete,
+    based on SimpleGameHosting's primary color #5F4BB6
+    And this project's default black(#0a0a0a) and white(#ededed)
+  */
+  /* 
+    [Wontae] removed @media (prefers-color-scheme: dark) braket 
+    which only meant to react to the initial user browser dark mode setting.
+    NOW defines to set of temporary color plates according to light-mode/dark-mode classname. 
+    Because,  DarkModeContext&useLocalStorageState detects @media (prefers-color-scheme: dark) and set the initial value
+  */
 
-/* 
-[Wontae] Asked ChatGPT to make a pallete,
-based on SimpleGameHosting's primary color #5F4BB6
-And this project's default black(#0a0a0a) and white(#ededed)
-*/
+  --primary-strong: #48398a;
+  --primary-normal: #5f4bb6;
+  --primary-light: #7f6dcc;
 
-/* 100부터 900을 왜 안쓰는가에 대하여!
-나중에 다크모드하려고 이러는 거다. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --black-dark: #171717;
-    --black-normal: #333333;
-    --black-light: #4d4d4d;
+  --error-strong: #7a2833;
+  --error-normal: #b03a48;
+  --error-light: #d97080;
 
-    --white-dark: #e6e6e6;
-    --white-normal: #f5f5f5;
-    --white-light: #ffffff;
+  --success-strong: #2a6c4d;
+  --success-normal: #3b8a5c;
+  --success-light: #9bd4b5;
 
-    --purple-dark: #48398a;
-    --purple-normal: #5f4bb6;
-    --purple-light: #7f6dcc;
+  &.light-mode {
+    --background-strong: #ffffff;
+    --background-normal: #f5f5f5;
+    --background-light: #e6e6e6;
 
-    --orange-dark: #cc4f4a;
-    --orange-normal: #ff6f61;
-    --orange-light: #ff9f90;
+    --foreground-strong: #171717;
+    --foreground-normal: #494454;
+    --foreground-light: #333333;
 
-    --yellow-dark: #b89b00;
-    --yellow-normal: #ffd700;
-    --yellow-light: #ffe866;
+    --secondary-strong: #b89b00;
+    --secondary-normal: #ffd700;
+    --secondary-light: #ffe866;
+  }
 
-    --red-dark: #7a2833;
-    --red-normal: #b03a48;
-    --red-light: #d97080;
+  &.dark-mode {
+    --background-strong: #171717;
+    --background-normal: #494454;
+    --background-light: #333333;
 
-    --green-dark: #2a6c4d;
-    --green-normal: #3b8a5c;
-    --green-light: #9bd4b5;
+    --foreground-strong: #e6e6e6;
+    --foreground-normal: #f5f5f5;
+    --foreground-light: #ffffff;
+
+    --secondary-strong: #cc4f4a;
+    --secondary-normal: #ff6f61;
+    --secondary-light: #ff9f90;
   }
 }
 
 body {
-  color: var(--black-dark);
-  background: var(--white-light);
+  color: var(--foreground-strong);
+  background: var(--background-strong);
   font-family: Arial, Helvetica, sans-serif;
 }

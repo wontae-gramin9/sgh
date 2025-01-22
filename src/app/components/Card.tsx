@@ -39,10 +39,10 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="rounded-lg border border-purple-3 bg-white-1 p-6 shadow-lg transition duration-500 hover:scale-1">
+    <div className="rounded-lg border border-primary-st bg-background-nm p-6 shadow-lg transition duration-500 hover:scale-1">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center gap-2">
-          <h1 className="text-xl font-semibold text-purple-2">{name}</h1>
+          <h1 className="text-xl font-semibold text-primary-st">{name}</h1>
           <h2 className="text-xl">{game}</h2>
           <div>
             <p>{players} Players playing</p>
@@ -55,7 +55,7 @@ function Card(props: { card: CardType }) {
           </div>
           <div className="mt-2 flex items-center justify-center">
             <Button
-              className={`rounded-lg px-4 py-2 font-medium text-white-1`}
+              className={`rounded-lg px-4 py-2 font-medium text-background-st`}
               disabled={loading}
             >
               {loading ? (
