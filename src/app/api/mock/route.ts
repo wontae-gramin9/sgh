@@ -16,10 +16,6 @@ export async function POST(request: Request) {
       message: `Card status with id ${id} successfully changed`,
     });
   } catch (error) {
-    return Response.json({
-      result: "FAILED",
-      data: [],
-      message: `Card status with id ${id} failed with ${error}`,
-    });
+    throw new Error(`Card status with id ${id} failed with ${error}`);
   }
 }

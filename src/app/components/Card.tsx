@@ -5,6 +5,7 @@ import Button from "@/app/components/Button";
 import Badge from "@/app/components/Badge";
 import Spinner from "@/app/components/Spinner";
 import { useState } from "react";
+import { errorToast, successToast } from "@/app/lib/toast";
 
 function Card(props: { card: CardType }) {
   const { card } = props;
@@ -26,11 +27,15 @@ function Card(props: { card: CardType }) {
         body: JSON.stringify(payload),
       });
       const result = await response.json();
+      console.log(result);
       const newServerStatus = result.data.status;
       setServerStatus(newServerStatus);
+      successToast("Server status successfully toggled.");
     } catch (error) {
+      errorToast("Server status changed failed.");
       console.error(
-        `Failed to change server status of card with id ${id}:`,
+        "Card component handleSubmit Error \n",
+        `Failed to change server status of Card with id ${id} → \n`,
         error
       );
     } finally {
