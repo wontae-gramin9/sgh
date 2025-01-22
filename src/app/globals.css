@@ -27,6 +27,14 @@
   --success-normal: #3b8a5c;
   --success-light: #9bd4b5;
 
+  /* [Wontae] Toastify progress bar color overwriting */
+
+  --toastify-color-success: var(--success-strong);
+  --toastify-color-error: var(--error-strong);
+
+  -toastify-color-progress-success: var(--toastify-color-success);
+  -toastify-color-progress-error: var(--toastify-color-error);
+
   &.light-mode {
     --background-strong: #ffffff;
     --background-normal: #f5f5f5;
