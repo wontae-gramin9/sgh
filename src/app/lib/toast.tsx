@@ -7,9 +7,6 @@ type CustomToastProps = {
 };
 
 function CustomToast({ type, msg }: CustomToastProps) {
-  // ${type === "success" ? "bg-success-st" : "bg-error-st"}
-  // dark:bg-gray-800 dark:text-gray-400
-
   return (
     <div
       className={`flex w-full items-center rounded-sm

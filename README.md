@@ -9,6 +9,25 @@
 
 For the readable code and consistent formatting, utilised `Tailwind Eslint`.
 
+### Setup
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/simplegamehosting/frontend-assignment.git
+   ```
+   ```
+   cd frontend-assignment
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser at http://localhost:3000 to view the project.
+
 ### Functionalities
 
 ![Image](https://github.com/user-attachments/assets/c7df056d-516b-4d4e-afaa-0aeb25bfe298)
@@ -46,6 +65,7 @@ For the readable code and consistent formatting, utilised `Tailwind Eslint`.
       - `DarkModeProvider` propagates `isDarkMode`, `setIsDarkMode` down to children elements.
   - `useLocalStorageState`
     - On rendering, get the value of the passed key from localStorage and set the key/value on the localStorage whenever there is a change.
+    - \_This remembers the previous dark mode setting even on refreshed.
   - Both of the above use browser API, which means they are only available and accessible on the client side, causing a hydration error.
     - Solved by dynamic import, importing DarkModeProvider with no ssr option, useful if an external dependency or component relies on browser APIs like "window" or "localStorage"( →[NextjsDoc](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr) )
       - Although the hydration error would show rarely among many refreshes on my personal Chrome account, which has many extensions that also cause it, I made sure it does not show on Chrome Guest mode, which does not have any Chrome extensions. So, the code itself is safe.
