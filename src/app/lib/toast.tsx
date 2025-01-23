@@ -12,7 +12,7 @@ function CustomToast({ type, msg }: CustomToastProps) {
 
   return (
     <div
-      className={`flex w-full max-w-xs items-center rounded-sm
+      className={`flex w-full items-center rounded-sm
         ${type === "success" ? "bg-success-nm" : "bg-error-nm"}
        p-4 text-background-st shadow`}
       role="alert"
