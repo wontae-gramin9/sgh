@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { CardType } from "@/app/types/Card";
-import Card from "@/app/components/Card";
+import ServerCard from "@/app/components/ServerCard/ServerCard";
 import Spinner from "@/app/components/Spinner";
-// import DarkModeToggle from "@/app/components/DarkModeToggle";
 import Header from "@/app/components/templates/Header";
 import ResponsiveGrid from "@/app/components/templates/ResponsiveGrid";
 
@@ -47,7 +46,7 @@ export default function Home() {
         {serverData ? (
           <ResponsiveGrid>
             {serverData.map((card: CardType) => (
-              <Card key={card.id} card={card} />
+              <ServerCard key={card.id} card={card} />
             ))}
           </ResponsiveGrid>
         ) : (

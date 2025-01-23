@@ -3,9 +3,9 @@ import { IoEarth, IoGameControllerSharp } from "react-icons/io5";
 
 import { PiLetterCircleVFill } from "react-icons/pi";
 import { CardType } from "@/app/types/Card";
-import PillBadge from "./PillBadge";
+import PillBadge from "../Badge/PillBadge";
 
-export default function AdditionalCardInfo(props: { card: CardType }) {
+export default function AdditionalServerCardInfo(props: { card: CardType }) {
   const { card } = props;
   const { version, type, region, mods } = card;
 

@@ -2,13 +2,13 @@
 
 import type { CardType } from "@/app/types/Card";
 import Button from "@/app/components/Button";
-import Badge from "@/app/components/Badge";
+import Badge from "@/app/components/Badge/Badge";
 import Spinner from "@/app/components/Spinner";
 import { useState } from "react";
 import { errorToast, successToast } from "@/app/lib/toast";
-import AdditionalCardInfo from "@/app/components/AdditionalCardInfo";
+import AdditionalServerCardInfo from "@/app/components/ServerCard/AdditionalServerCardInfo";
 
-function Card(props: { card: CardType }) {
+function ServerCard(props: { card: CardType }) {
   const { card } = props;
   const { id, name, game, players, status } = card;
 
@@ -74,11 +74,11 @@ function Card(props: { card: CardType }) {
               )}
             </Button>
           </div>
-          <AdditionalCardInfo card={card} />
+          <AdditionalServerCardInfo card={card} />
         </div>
       </form>
     </div>
   );
 }
 
-export default Card;
+export default ServerCard;
