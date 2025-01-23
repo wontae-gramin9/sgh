@@ -35,7 +35,7 @@ function ServerCard(props: { card: CardType }) {
       successToast("Server status successfully toggled.");
     } catch (error) {
       errorToast("Server status changed failed.");
-      console.error(
+      console.log(
         "Card component handleSubmit Error \n",
         `Failed to change server status of Card with id ${id} → \n`,
         error
