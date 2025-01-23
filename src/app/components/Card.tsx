@@ -6,10 +6,12 @@ import Badge from "@/app/components/Badge";
 import Spinner from "@/app/components/Spinner";
 import { useState } from "react";
 import { errorToast, successToast } from "@/app/lib/toast";
+import AdditionalCardInfo from "@/app/components/AdditionalCardInfo";
 
 function Card(props: { card: CardType }) {
   const { card } = props;
   const { id, name, game, players, status } = card;
+
   const [serverStatus, setServerStatus] = useState(() => status);
   const [loading, setLoading] = useState(false);
 
@@ -44,13 +46,13 @@ function Card(props: { card: CardType }) {
   }
 
   return (
-    <div className="min-w-56 rounded-lg border border-secondary-st bg-background-li px-1 py-4 shadow-lg transition duration-500 hover:scale-1 sm:min-w-64 sm:px-4">
+    <div className="min-w-56 rounded-lg border border-secondary-st bg-background-li px-1 py-4 shadow-lg transition duration-500 hover:scale-3 sm:min-w-64 sm:px-4">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-xl font-semibold text-secondary-st">{name}</h1>
           <h2 className="text-xl">{game}</h2>
-          <div>
-            <p>{players} Players playing</p>
+          <div className="flex flex-col items-center">
+            <p>{players} Players Online</p>
             <div className="flex items-center justify-center gap-2">
               <span>Server Status</span>
               <Badge type={serverStatus === "online" ? "success" : "error"}>
@@ -72,6 +74,7 @@ function Card(props: { card: CardType }) {
               )}
             </Button>
           </div>
+          <AdditionalCardInfo card={card} />
         </div>
       </form>
     </div>

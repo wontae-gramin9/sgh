@@ -15,6 +15,10 @@
     Because,  DarkModeContext&useLocalStorageState detects @media (prefers-color-scheme: dark) and set the initial value
   */
 
+  --white-strong: #ffffff;
+  --white-normal: #f9f8f9;
+  --white-light: #ebe6ec;
+
   --primary-strong: #48398a;
   --primary-normal: #5f4bb6;
   --primary-light: #7f6dcc;
@@ -28,17 +32,17 @@
   --success-light: #9bd4b5;
 
   &.light-mode {
-    --background-strong: #ffffff;
-    --background-normal: #f9f8f9;
-    --background-light: #ebe6ec;
+    --background-strong: var(--white-strong);
+    --background-normal: var(--white-normal);
+    --background-light: var(--white-light);
 
     --foreground-strong: #000000;
     --foreground-normal: #171616;
     --foreground-light: #232325;
 
-    --secondary-strong: #cc4f4a;
-    --secondary-normal: #ff6f61;
-    --secondary-light: #ff9f90;
+    --secondary-strong: #c53a35;
+    --secondary-normal: #d84c3f;
+    --secondary-light: #f56852;
   }
 
   &.dark-mode {
@@ -46,9 +50,9 @@
     --background-normal: #171616;
     --background-light: #232325;
 
-    --foreground-strong: #ffffff;
-    --foreground-normal: #f9f8f9;
-    --foreground-light: #ebe6ec;
+    --foreground-strong: var(--white-strong);
+    --foreground-normal: var(--white-normal);
+    --foreground-light: var(--white-light);
 
     --secondary-strong: #b89b00;
     --secondary-normal: #ffd700;
