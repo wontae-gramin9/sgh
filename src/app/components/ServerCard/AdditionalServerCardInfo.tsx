@@ -22,7 +22,7 @@ export default function AdditionalServerCardInfo(props: { card: CardType }) {
           <IoEarth className="inline" /> {region}
         </p>
       </div>
-      <div className="flex gap-1 text-xs">
+      <div className="flex flex-wrap justify-center gap-1 text-xs">
         {mods.map((mod) => (
           <PillBadge key={mod} color="secondary-li">
             {mod}

@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "320px", // Galaxy Flip
+        sm: "480px", // 640px → 480px overwriting
+      },
       scale: {
         "1": "1.01",
         "2": "1.03",
