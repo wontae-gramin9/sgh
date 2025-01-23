@@ -4,7 +4,6 @@ import type { CardType } from "@/app/types/Card";
 // To categorize route hanlers and its HTTP methods sorely on api/mock/routes file
 // Also, place mockData and UpdateServerStatusOfCard() in the same file enables mutating mockData easily
 // Because, at ES6, imported objects are immutable, so on tried mutating it exude a compile error
-// export let mockData: CardType[] = [
 export let mockData: CardType[] = [
   {
     id: 1,
